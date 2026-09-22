@@ -1,0 +1,10 @@
+name: opencode agent
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  agent:
+    uses: 99linesofcode/.github/.github/workflows/opencode.yaml@main
+    secrets: inherit
