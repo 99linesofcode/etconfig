@@ -1,0 +1,17 @@
+name: Automatic updates
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  pull-requests: write
+  contents: write
+  issues: write
+
+jobs:
+  update:
+    uses: 99linesofcode/.github/.github/workflows/automatic-updates.yaml@main
+  agent:
+    uses: 99linesofcode/.github/.github/workflows/update-agent.yaml@main
+    secrets: inherit
